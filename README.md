@@ -11,9 +11,9 @@
 
 ### 목표
 
-- [ ] 1부. 더 큰 그림
-  - [ ] 1장. 단위 테스트 목표
-  - [ ] 2장. 단위 테스트란 무엇인가
+- [x] 1부. 더 큰 그림
+  - [x] 1장. 단위 테스트 목표
+  - [x] 2장. 단위 테스트란 무엇인가
   - [ ] 3장. 단위 테스트 구조
 - [ ] 2부. 개발자에게 도움이 되는 테스트 만들기
   - [ ] 4장. 좋은 단위 테스트의 4대 요소
@@ -33,5 +33,59 @@
 
 - [Unit Test - 생산성과 품질을 위한 단위 테스트 원칙과 패턴](http://www.yes24.com/Product/Goods/104084175)
 - [테스트 마스터하기(요약)](https://velog.io/@jkijki12/%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%A7%88%EC%8A%A4%ED%84%B0%ED%95%98%EA%B8%B0-1-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9D%98-%EB%AA%A9%ED%91%9C)
+
+<br><br>
+
+---
+
+<br><br>
+
+# 1부. 더 큰 그림
+
+## 1장. 단위 테스트 목표
+
+### 단위테스트
+<img src="https://user-images.githubusercontent.com/66783849/210682832-fe015bdb-383d-40ba-ba34-3974bc132e29.png" width="250"><br>
+테스트 부재에 따른 진척도 및 작업 소요기간<br>
+테스트가 없으면 이후 기하급수적으로 작업소요시간이 늘어난다. 이는 유지보수 및 신규 기능을 적용이 어렵기 때문.
+
+<br>
+
+### 코드 커버리지(테스트 커버리지)
+
+- 코드 커버리지(테스트 커버리지) = 실행코드 라인 수 / 전체 라인수, (100%가 되면 좋다)
+  - 예시1. 전체 라인수 3줄, 실행 코드 라인수 2줄
+    ```cs
+    pulic static bool IsStringLong(string input){
+      if (input.length > 5)
+          return true;
+      return false;
+    }
+    ```
+  - 예시2. 코드 커버리지 100%
+    ```cs
+    pulic static bool IsStringLong(string input){
+      return input.length > 5;
+    }
+    ```
+
+<br>
+
+### 분기 커버리지
+
+- 분기 커버리지 = 통과 분기 / 전체 분기 (외부 라이브러리에 대한 분기를 조심)
+  - 예시 1
+    ```cs
+    public void Function(string input)
+    {
+        if(IsStringLong(input))
+            Console.WriteLine("Is Over 5 Line");
+    }
+    ```
+  - 예시 1의 경우, 5줄 이상만 진행하기에 50%이다.
+  - 하지만 string이라는 .Net에는 여러 분기가 존재하는데...
+    - null, "", 너무 긴 문자열, 문자열이 아닌 것
+    - 이러한 4가지의 분기로 나뉘어 진다. 이러한 점을 조심할 것.
+
 
 <br><br>
