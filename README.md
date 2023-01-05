@@ -99,9 +99,7 @@
 - 예시
   ```cs
   pulic static bool IsStringLong(string input){
-    if (input.length > 5)
-        return true;
-    return false;
+      return input.length > 5;
   }
   [Fact]
   public void Test()
