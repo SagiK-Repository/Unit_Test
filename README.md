@@ -89,3 +89,31 @@
 
 
 <br><br>
+
+## 2장. 단위 테스트란 무엇인가
+
+<br>
+
+### 단위 테스트
+- 작은 코드 조각(단위)을 검증하고, 빠르게 수행하고, 격리된 방식으로 처리하는 자동화 테스트.
+- 예시
+  ```cs
+  pulic static bool IsStringLong(string input){
+    if (input.length > 5)
+        return true;
+    return false;
+  }
+  [Fact]
+  public void Test()
+  {
+      // Arrange
+      
+      // Act
+      bool result = IsStringLong("abc");
+  
+      // Assert
+      Assert.Equal(result, true);
+  }
+  ```
+
+<br><br>
