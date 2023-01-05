@@ -132,15 +132,58 @@
   - xunit
   - nunit
 - 단위테스트 명명법
-  - `[테스트 대상 매서드]_[시나리오]_[예상결과(기대결과)]`
+  - `[테스트 대상 메서드(메서드이름)]_[시나리오(테스트 조건)]_[예상결과(기대결과)]`
+  ```cs
+  public class CacluatorTests
+  {
+    [Fact]
+    //public void Sum_of_two_numbers() // 바로 읽히는 것을 추구하면 이것 또한 좋다.
+    public void Sum_TwoNumbers_RetunsSum()
+    {
+        double first = 10;
+        double second = 20;
+        var sut = new Caculator();
+
+        double result = sut.Sum(first, second);
+
+        Assert.Equal(result, 30);
+    }
+  }
+  ```
+  - 어디까지나 읽히기 쉬우면 좋다.
+    - `public void IsDeliveryValid_InvalidDate_ReturnsFalse()`
+    - `public void Delivery_with_invalid_date_should_be_considered_invalid()`
+    - `public void Delivery_with_a_past_date_is_invalid()`
+      - 단도직입적으로 설명했으므로, 좋다.
+
+### Test 방법
+
+- `[Fact]` : 사실을 이야기 한다.
+- `[Theory]` : 이론 동작에 대한 사실의 묶음이다.
+- `[InlineData]` : 시스템에 대한 별도의 사실을 나타낸다.
+
+### 검증문 라이브러리
+
+- Fluent Assertions 뿐만 아니라 .Net에는 다양한 검증문이 존재한다.
+  - `Assert.Equal(result, expected);`
+  - `result.Should().Be(expected);`
+- 가독성이 좋은 내용을 잘 선택하자.
+
 
 <br><br>
 
 # 2부. 개발자에게 도움이 되는 테스트 만들기
 
-<br><br>
-
 ## 4장. 좋은 단위 테스트의 4대 요소
+
+### 좋은 테스트
+
+- 좋은 테스트를 만들자.
+- 리팩터링 내성 + 회귀 방지 + 빠른 피드백 : 실현불가능한 이상적인 테스트
+  - 리팩터링 내성 + 회귀 방지 : 엔드 투 엔드 테스트
+  - 리팩터링 내성 + 빠른 피드백 : 간단한 테스트
+  - 회귀 방지 + 빠른 피드백 : 깨지기 쉬운 테스트
+- 블랙박스 테스트, 화이트박스 테스트
 
 <br><br>
 
