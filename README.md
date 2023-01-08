@@ -15,7 +15,7 @@
   - [x] [1장. 단위 테스트 목표](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#1%EC%9E%A5-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%AA%A9%ED%91%9C)
   - [x] [2장. 단위 테스트란 무엇인가](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#2%EC%9E%A5-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80)
   - [x] [3장. 단위 테스트 구조](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#3%EC%9E%A5-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B5%AC%EC%A1%B0)
-- [ ] [2부. 개발자에게 도움이 되는 테스트 만들기](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#2%EB%B6%80-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%97%90%EA%B2%8C-%EB%8F%84%EC%9B%80%EC%9D%B4-%EB%90%98%EB%8A%94-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0)
+- [x] [2부. 개발자에게 도움이 되는 테스트 만들기](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#2%EB%B6%80-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%97%90%EA%B2%8C-%EB%8F%84%EC%9B%80%EC%9D%B4-%EB%90%98%EB%8A%94-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0)
   - [x] [4장. 좋은 단위 테스트의 4대 요소](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#4%EC%9E%A5-%EC%A2%8B%EC%9D%80-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9D%98-4%EB%8C%80-%EC%9A%94%EC%86%8C)
   - [x] [5장. 목과 테스트 취약성](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#5%EC%9E%A5-%EB%AA%A9%EA%B3%BC-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B7%A8%EC%95%BD%EC%84%B1)
   - [x] [6장. 단위 테스트 스타일](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#6%EC%9E%A5-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8A%A4%ED%83%80%EC%9D%BC)
