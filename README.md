@@ -19,7 +19,7 @@
   - [x] [4장. 좋은 단위 테스트의 4대 요소](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#4%EC%9E%A5-%EC%A2%8B%EC%9D%80-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9D%98-4%EB%8C%80-%EC%9A%94%EC%86%8C)
   - [x] [5장. 목과 테스트 취약성](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#5%EC%9E%A5-%EB%AA%A9%EA%B3%BC-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B7%A8%EC%95%BD%EC%84%B1)
   - [x] [6장. 단위 테스트 스타일](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#6%EC%9E%A5-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8A%A4%ED%83%80%EC%9D%BC)
-  - [ ] 7장. 가치 있는 단위 테스트를 위한 리팩터링
+  - [x] [7장. 가치 있는 단위 테스트를 위한 리팩터링](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#7%EC%9E%A5-%EA%B0%80%EC%B9%98-%EC%9E%88%EB%8A%94-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%A6%AC%ED%8C%A9%ED%84%B0%EB%A7%81)
 - [ ] 3부. 통합 테스트
   - [ ] 8장. 통합 테스트를 하는 이유
   - [ ] 9장. 목 처리에 대한 모범 사례
