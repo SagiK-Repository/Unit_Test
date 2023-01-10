@@ -20,11 +20,11 @@
   - [x] [5장. 목과 테스트 취약성](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#5%EC%9E%A5-%EB%AA%A9%EA%B3%BC-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B7%A8%EC%95%BD%EC%84%B1)
   - [x] [6장. 단위 테스트 스타일](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#6%EC%9E%A5-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8A%A4%ED%83%80%EC%9D%BC)
   - [x] [7장. 가치 있는 단위 테스트를 위한 리팩터링](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#7%EC%9E%A5-%EA%B0%80%EC%B9%98-%EC%9E%88%EB%8A%94-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%A6%AC%ED%8C%A9%ED%84%B0%EB%A7%81)
-- [ ] 3부. 통합 테스트
-  - [ ] 8장. 통합 테스트를 하는 이유
-  - [ ] 9장. 목 처리에 대한 모범 사례
-  - [ ] 10장. 데이터베이스 테스트
-- [ ] 4부. 단위 테스트 안티 패턴
+- [x] [3부. 통합 테스트](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#3%EB%B6%80-%ED%86%B5%ED%95%A9-%ED%85%8C%EC%8A%A4%ED%8A%B8)
+  - [x] [8장. 통합 테스트를 하는 이유](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#8%EC%9E%A5-%ED%86%B5%ED%95%A9-%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%A5%BC-%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)
+  - [x] [9장. 목 처리에 대한 모범 사례](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#9%EC%9E%A5-%EB%AA%A9-%EC%B2%98%EB%A6%AC%EC%97%90-%EB%8C%80%ED%95%9C-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80)
+  - [x] [10장. 데이터베이스 테스트](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#10%EC%9E%A5-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%ED%85%8C%EC%8A%A4%ED%8A%B8)
+- [ ] [4부. 단위 테스트 안티 패턴](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#4%EB%B6%80-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%95%88%ED%8B%B0-%ED%8C%A8%ED%84%B4)
 
 ### 제작자
 [@SAgiKPJH](https://github.com/SAgiKPJH)
@@ -242,23 +242,21 @@
 
 # 3부. 통합 테스트
 
-<br><br>
-
 ## 8장. 통합 테스트를 하는 이유
 
 - 통합테스트
   - 단일 동작 단위를 검증
   - 빠르게 수행
   - 다른 테스트와 별도로 처리
-- 단위테스트와 통합 테스트 개수의 균형을 맞추어야 한다.
-  <img src="https://user-images.githubusercontent.com/66783849/211224659-1424d166-fc8d-4a7f-b90a-bc4b2319d204.png" width="450">
+- 단위테스트와 통합 테스트 개수의 균형을 맞추어야 한다.  
+  <img src="https://user-images.githubusercontent.com/66783849/211224659-1424d166-fc8d-4a7f-b90a-bc4b2319d204.png" width="450">  
   - 단위테스트 - 도메인 모델 및 알고리즘
   - 통합테스트 - 컨트롤러
   - 간단한 코드 및 복잡한 코드는 테스트 하지 않아야 한다.
 
 ### 테스트 피라미드
 
-<img src="https://user-images.githubusercontent.com/66783849/211683121-d8056254-2653-4489-a26a-5c3b9a9c1ff7.png" width="450">
+<img src="https://user-images.githubusercontent.com/66783849/211683121-d8056254-2653-4489-a26a-5c3b9a9c1ff7.png" width="450">  
 
 - 1. 엔드 투 엔드 테스트
 - 2. 통합 테스트
@@ -332,7 +330,6 @@
   }
   ```
 - 코드 오염
-  - 
 
 <br><br>
 
