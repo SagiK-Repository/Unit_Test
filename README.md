@@ -258,6 +258,13 @@
 
 ### 테스트 피라미드
 
+<img src="https://user-images.githubusercontent.com/66783849/211683121-d8056254-2653-4489-a26a-5c3b9a9c1ff7.png" width="450">
+
+- 1. 엔드 투 엔드 테스트
+- 2. 통합 테스트
+- 3. 단위 테스트
+- 가로 축 : 테스트 개수
+- 세로 축 : 위 {회귀 방지, 리팩터링 내성) <-> 아래 {빠른 피드백, 유지 보수성}
 
 
 <br><br>
@@ -271,6 +278,61 @@
 <br><br>
 
 # 4부. 단위 테스트 안티 패턴
+
+- 안티패턴이란, 겉으로 적적한 것 처럼 보이지만 장래에 더 큰 문제로 이어지는 반복적인 문제에 대한 일반적인 해결책이다.
+- 비공개 메서드 단위 테스트
+  - 비공개 메서드는 전혀 테스트 하지 말아야 한다.
+  - 단위테스트를 하려고 비공개 메소드를 노출하는 경우는, 기본 원칙중 하나ㅣㄴ 식별할 수 있는 동작만 테스트 하는 것을 위반한다. 이는 테스트가 구현 세부 사항과 결합되고 결과적으로 리팩토리 내성이 떨어진다.
+- 비공개 상태 노출
+  - 비공개 상태인 변수, 함수를 테스트를 위해 노출하는 것은 옳지 않다.
+- 테스트로 유출된 도메인 지식
+  - 도메인 지식을 테스트로 유출하는 것 또한 안티패턴이다.
+  - 예를 들어 Add 라는 함수는 a + b로 이루어진다.
+  - 하지만 테스트에서 Assert.Equal을 위해 비교할 변수를 a+b와 똑같이 구성하면, 함수 내부의 내용을 외부에서 알 수 있게 된다.
+  - 직접 지정하는 등, 최대한 유출되지 않게 구성해야 한다.
+  ```cs
+  public static class Calculator
+  {
+    public static int Add(int value1, int value2)
+    {
+      return value1 + value2;
+    }
+  }
+  
+  // Test
+  public class CalculatorTests
+  {
+    [Fact]
+    public void Adding_two_number()
+    {
+      int value1 = 1, value2 = 3;
+      int expected = value1 + value2; // 도메인 외부 유출
+      
+      int actual = Calculator.Add(value1, value2);
+      
+      Assert.Equal(expected, actual);      
+    }
+  }
+  ```
+  - 다음과 같이 결과를 테스트에 하드 코딩한다. (직관적이지 않아보일 수 있지만, 단위 테스트에서는 예상 결과를 하드코딩하는 것이 좋다.
+  ```cs
+  // Test
+  public class CalculatorTests
+  {
+    [Theory]
+    [InlineData(1, 3, 4)]
+    [InlineData(11, 33, 44)]
+    [InlineData(100, 500, 600)]
+    public void Adding_two_number(int value1, int value2, int expected)
+    {
+      int actual = Calculator.Add(value1, value2);
+      
+      Assert.Equal(expected, actual);      
+    }
+  }
+  ```
+- 코드 오염
+  - 
 
 <br><br>
 
