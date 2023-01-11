@@ -1,4 +1,4 @@
-문서정보 : 2023.01.05. 작성, 작성자 [@SAgiKPJH](https://github.com/SAgiKPJH)
+문서정보 : 2023.01.05.-01.12. 작성, 작성자 [@SAgiKPJH](https://github.com/SAgiKPJH)
 
 <br>
 
@@ -24,7 +24,7 @@
   - [x] [8장. 통합 테스트를 하는 이유](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#8%EC%9E%A5-%ED%86%B5%ED%95%A9-%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%A5%BC-%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)
   - [x] [9장. 목 처리에 대한 모범 사례](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#9%EC%9E%A5-%EB%AA%A9-%EC%B2%98%EB%A6%AC%EC%97%90-%EB%8C%80%ED%95%9C-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80)
   - [x] [10장. 데이터베이스 테스트](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#10%EC%9E%A5-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%ED%85%8C%EC%8A%A4%ED%8A%B8)
-- [ ] [4부. 단위 테스트 안티 패턴](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#4%EB%B6%80-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%95%88%ED%8B%B0-%ED%8C%A8%ED%84%B4)
+- [x] [4부. 단위 테스트 안티 패턴](https://github.com/SagiK-Repository/Unit_Test/blob/main/README.md#4%EB%B6%80-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%95%88%ED%8B%B0-%ED%8C%A8%ED%84%B4)
 
 ### 제작자
 [@SAgiKPJH](https://github.com/SAgiKPJH)
