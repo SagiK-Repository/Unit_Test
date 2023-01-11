@@ -330,6 +330,35 @@
   }
   ```
 - 코드 오염
+  - 코드 오염 : 테스트에만 필요한 제품 코드를 추가하는 것이다.
+  - 테스트에서 생략해야 하는 내용이 있다면, 해당 함수에 대한 인터페이스를 만들고, Fake함수를 만들어 활용한다.
+  ```cs
+  public interface ILogger
+  {
+    void Log(string text);
+  }
+  public class Logger : ILogger
+  {
+    public void Log(string text)
+    {
+      /* text에 대한 로깅 */
+    }
+  }
+  
+  public class FakeLogger : ILogger
+  {
+    public class Log(string text)
+    {
+      /* 테스트 시에는 아무것도 안함 */
+    }
+  }
+  ```
+- 구체 클래스를 목으로 처리하기
+- 시간 처리하기
+  - 시간에 따라 달라지는 기능을 테스트하기 위해서 2가지 방법이 있다.
+  - 앰비언트 컨텍스트로서의 시간
+    - 앰비언트 컨텍스트 패턴을 활용
+  - 명시적 의존성으로서의 시간
 
 <br><br>
 
