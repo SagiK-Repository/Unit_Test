@@ -40,6 +40,9 @@
 
 <br><br>
 
+<img src="https://user-images.githubusercontent.com/66783849/212215568-1583b42d-bf72-4461-a4ee-c40171dd28da.png" width="450">
+
+
 # 1부. 더 큰 그림
 
 ## 1장. 단위 테스트 목표
@@ -113,6 +116,11 @@
       Assert.Equal(result, true);
   }
   ```
+
+### 목
+- 목 : 테스트 대상과 협력자 간의 상호 작용을 검사할 수 있는 특별한 테스트 대역이다.
+  - 목 프레임워크로 Moq를 사용하지만, NSubstitute와 같은 다른 프레임 워크가 있다.
+  - 자바에는 Mockito나 JMock, EasyMock이 있다.
 
 <br><br>
 
