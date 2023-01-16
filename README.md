@@ -122,6 +122,12 @@
   - 목 프레임워크로 Moq를 사용하지만, NSubstitute와 같은 다른 프레임 워크가 있다.
   - 자바에는 Mockito나 JMock, EasyMock이 있다.
 
+### 엔드 투 엔드 테스트
+- 모든 외부 애플리케이션을 포함해 시스템을 최종 사용자의 관점에서 검증하는 것을 의미한다.
+- 엔드 투 엔드 테스트는 통합테스트에 비해 일반적으로 의존성을 더 많이 포함한다. 프로세스 외부 의존성을 전부 또는 대다수 갖고 작동한다.
+- 통합테스트의 일부로써, 엔드 투 엔드 테스트는 외부 종속성과 함께 어떻게 작동하는지 검증한다.
+  - 통합테스트 : 공유 의존성, 프로세스 외부 의존성, 조직 내 다른 팀이 개발한 코드 등과 통합해 작동하는지 검증하는 테스트
+
 <br><br>
 
 ## 3장. 단위 테스트 구조
@@ -130,6 +136,7 @@
 
 1. if 문은 쓰지 말자
 2. AAA패턴(준비 실행 검증)에서 실행 부분은 무조건 한줄
+   - 준비, 실행, 검증 턴패턴
 3. 하나의 기능에 하나의 테스트 (기능이 많으면 테스트를 늘린다)
 
 <br>
@@ -192,6 +199,8 @@
   - 리팩터링 내성 + 빠른 피드백 : 간단한 테스트
   - 회귀 방지 + 빠른 피드백 : 깨지기 쉬운 테스트
 - 블랙박스 테스트, 화이트박스 테스트
+- 거짓 양성 : 허위 경보, 테스트가 실패했다고 나타나지만, 의도한 대로 작동한다.
+  - 거짓 양성은 테스트 스위트에 치명적인 영향을 줄 수 있다.
 
 <br><br>
 
@@ -205,7 +214,34 @@
   - 페이크
 - 목 (목, 스파이) : 외부로 나가는 상호 작용을 모방하고 검사하는데 도움.
 - 스텁(stub) (스텁, 더미, 페이크) : 내부로 들어오는 상호 작용을 모방하고 검사하는데 도움.
-- 예시는 나중에...
+- 예시
+  ```cs
+  // 목 라이브러리에서 Mock 클래스를 사용해 목을 생성
+  [Fact]
+  public void Sending_a_greetings_email()
+  {
+    var mock = new Mock<IEmailGateway>();
+    var sut = new Controller(mock.Object);
+    
+    sut.GreetUser("user@email.com");
+    
+   // 테스트 대역으로 하는 SUT의 호출을 검사
+    mock.Veify( x => x.SendGreetingsEmail("user@email.com"), Times.Once);
+  }
+  
+  // Mock 클래스를 사용해 스텁을 생성
+  [Fact]
+  public void Creatings_a_report()
+  {
+    var stub = new Mock<IDatabase>();
+    stub.Setup( x => x.GetNumberOfUser()).Returns(10);
+    var sut = new Controller(stub.Object);
+    
+    Report report = sut.CreateReport();
+    
+    Assert.Equal(10, report.NumberOfUsers);
+  }
+  ```
 
 <br><br>
 
