@@ -242,6 +242,16 @@
     Assert.Equal(10, report.NumberOfUsers);
   }
   ```
+  - 스텁의 상호작용을 검증하지 말아라 -> 취약한 테스트, 일반적인 안티 패턴
+  - 목 : 명령 + 부작용 초래 + 반환 값 없음, 스텁 : 조회 + 부작용 없음 + 값 반환
+  ```cs
+  var mock = new Mock<IEmailGateway>();
+  mock.Veify( x => x.SendGreetingsEmail("user@email.com"));
+  
+  var stub = new Mock<IDatabase>();
+  stub.Setup( x => x.GetNumberOfUser()).Returns(10);
+  ```
+ 
 
 <br><br>
 
@@ -251,9 +261,64 @@
 - 상태 기반 테스트 : 리펙터링 내성을 지키기 위한 노력은 중간, 유지비도 중간.
 - 통신 기반 테스트 : 리펙터링 내성을 지키기 위한 노력은 중간, 유지비도 높다.
 - 함수형 프로그래밍
-  - 목과 연동하는 예제는 나중에...
+  - 예제) 목을 이용한 감사 시스템의 동작 확인 (목을 타당하게 사용)
+  ```cs
+  [Fact]
+  public void A_new_file_is_created_when_the_current_file_overflows()
+  {
+    var fileSystemMock = new Mock<IFileSystem>();
+    fileSystemMock.Setup(x => x.GetFiles("audits")).Returns(new string[]
+        {
+          @"audits/audit_1.txt",
+          @"audits/audit_2.txt"
+        });
+     fileSystemMock(x => x.ReadAllLines(@"audits/audit_2.txt")).Returns(new List<string>
+        {
+          "Peter; 2019-01-06",
+          "Jane; 2019-01-12",
+          "Jack; 2019-01-15",
+        });
+     var sut = new AuditManager(3, "audits", fileSystemMock.Object);
+     
+     sut.AddRecord("Alice", DataTime.Parse("2019-04-06"));
+     
+     fileSystemMick.Verify(x => x.WriteAllText(@"audits\audit_3.txt", "Alice;2019-04-06"));
+  }
+  ```
+  - 목 없이 작성된 테스트 (빠른 피드백 개선, 유지보수성 지표도 향상)
+  ```cs
+  [Fact]
+  public void A_new_file_is_created_when_the_current_file_overflows()
+  {
+    var sut = new AuditManager(3);
+    var files = new FileContent[]
+    {
+      new FileContent("audit_1.txt", nwe string[0]),
+      new FileContent("audit_1.txt", nwe string[]
+      {
+         "Peter; 2019-01-06",
+         "Jane; 2019-01-12",
+         "Jack; 2019-01-15"
+      })
+    };
+    
+    fileUpdate update = sut.AddRecord(files, "Alice", DataTime.Parse("2019-04-06"));
+    
+    Assert.Equal("audit_3.txt" update.FileName);
+    Assert.Equal("Alice;2019-04-06", update.NewContent);
+  }
+  ```
+  - Fluent Assertions Nuget Pakage
+  ```cs
+  // xUnit
+  Assert.Equal("Alice;2019-04-06", update.NewContent);
+  
+  // Fluent Assertions
+  update.Should().Be( new FileUpdate9("audit_3.txt", "Alice;2019-04-06") );
+  ```
 
 <br><br>
+
 
 ## 7장. 가치 있는 단위 테스트를 위한 리팩터링
 
